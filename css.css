@@ -1,62 +1,79 @@
-body {
-  background-color: #D9EBF9;
+*, *:before, *:after {
+  margin:0;
+  box-sizing: border-box;
 }
-.streamBox {
-  background-color:#267DBF;
-  height:auto;
-  width:auto;
-  color: white;
-  margin: 5% 5%;
+.content{
+  display: flex;
+  width:100%;
+  height: 100vh;
+  overflow: hidden;
 }
-div.mypanel {
-  display:flex;
-  justify-content:center;
+.channelRow{
+  background: #455A64;
+  width: 300px;
+  height:100%;
+  box-shadow: 0 0 4px 1px rgba(0,0,0,0.5);
 
 }
-button {
-  margin:0px 5px !important;
-  width:100px;
-  background-color:#267DBF !important;
-  border:none !important;
-
-}
-.streamer {
-  height:auto;
-  border-bottom: 1px solid black;
-  display:flex;
+.videoRow {
+  height: 100%;
 }
 
-
-.streamer:nth-last-child(1){
-  border-bottom:none;
+.channelRow .options  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 1px 2px rgba(0,0,0,0.5);
+  user-select:none;
 }
-.streamer .title {
-  display:flex;
-  flex:none;
-  width:100px;
-  margin-right: 5px;
-  align-items:center;
-}
-.title a {
+.channelRow .options p {
+  flex-grow: 1;
+  text-align: center;
+  padding:10px;
   color:white;
-}
-.streamer .info {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex:2;
-
+  cursor: pointer;
 }
 
-img {
-  flex: initial;
-  width: 75px;
-  height:75px;
-  border-radius: 50%;
-  margin: 12.5px;
+.channelRow .options p:hover {
+  transform: scale(1.1);
 }
-@media screen and (max-width:700px){
-  .streamBox {
-    margin: 5% 0%;
-  }
+.channelRow .options p:active {
+  transform: scale(0.9);
+}
+.channels {
+  height: 100%;
+  overflow: scroll;
+}
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255,0,0,0.1);
+}
+.channels .profile {
+  border-bottom: 0.5px solid #607D8B;
+}
+.channels .profile:hover{
+  background-color: rgba(68, 65, 68,0.2);
+}
+.channels .profile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.channels .profile > * {
+  flex-grow: 1;
+  text-align: center;
+}
+.channels .profile img {
+  width:20px;
+  padding: 5px;
+
+}
+.channels .profile i {
+  color: white;
+}
+.channels .profile i:active {
+  transform: scale(0.9);
 }
