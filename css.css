@@ -77,3 +77,43 @@
 .channels .profile i:active {
   transform: scale(0.9);
 }
+.channel .profileInfo .organizer {
+  display:flex;
+  background: rgba(0,0,0,0.5);
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+}
+.profileInfo{
+  display:none;
+}
+.display{
+  display:flex;
+}
+.channel .profileInfo > *{
+  padding: 5px;
+  color:white;
+}
+.channel .profileInfo button {
+  width: 80px;
+}
+#addBtn {
+  position: absolute;
+    bottom: 30px;
+    left: 230px;
+    width: 60px;
+    height: 60px;
+    background: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 5px 3px 1px rgba(0,0,0,0.5);
+    transition:all 0.2s ;
+    user-select:none;
+    cursor:pointer;
+}
+#addBtn:active{
+  bottom:28px;
+  box-shadow: 0 3px 0px 0px rgba(0,0,0,0.5);
+}

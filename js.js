@@ -8,16 +8,19 @@ var channelsOnline = [];
 
 
 
+// controls for the dropdown info of each channel (jquery)
+//////////////////////////////////////////////////////////////////
+
+$(".profile").click(function(){
+  $(".fa").toggleClass("fa-minus");
+  $(".profileInfo").slideToggle();
+});
+////////////////////////////////////////////////////////////
 
 
 
 
-
-
-
-
-
-// 
+//
 // channels.forEach(function(element){
 //   $.ajax({
 //     type: "GET",
