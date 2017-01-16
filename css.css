@@ -1,0 +1,62 @@
+body {
+  background-color: #D9EBF9;
+}
+.streamBox {
+  background-color:#267DBF;
+  height:auto;
+  width:auto;
+  color: white;
+  margin: 5% 5%;
+}
+div.mypanel {
+  display:flex;
+  justify-content:center;
+
+}
+button {
+  margin:0px 5px !important;
+  width:100px;
+  background-color:#267DBF !important;
+  border:none !important;
+
+}
+.streamer {
+  height:auto;
+  border-bottom: 1px solid black;
+  display:flex;
+}
+
+
+.streamer:nth-last-child(1){
+  border-bottom:none;
+}
+.streamer .title {
+  display:flex;
+  flex:none;
+  width:100px;
+  margin-right: 5px;
+  align-items:center;
+}
+.title a {
+  color:white;
+}
+.streamer .info {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:2;
+
+}
+
+img {
+  flex: initial;
+  width: 75px;
+  height:75px;
+  border-radius: 50%;
+  margin: 12.5px;
+}
+@media screen and (max-width:700px){
+  .streamBox {
+    margin: 5% 0%;
+  }
+}
