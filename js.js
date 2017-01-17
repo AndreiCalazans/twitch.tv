@@ -4,14 +4,30 @@ var channels = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck"
 var channelsGotten = [];
 var channelsOnline = [];
 var channelsSection = document.querySelector(".channels");
-var logoReplace = new Image();
-logoReplace.src = "fi-torso.svg";
-
 var iframe = document.querySelector("iframe");
 
 
 // controls for the dropdown info of each channel (jquery)
 //////////////////////////////////////////////////////////////////
+var toggleSlider = document.querySelector(".slider");
+var open = false;
+toggleSlider.addEventListener("click",function(){
+
+  if(!open || undefined ){
+    $(".channelRow").css("left", "0");
+    $(".slider").css("right","20px" );
+    $(".slider").css("transform","rotate(180deg)");
+    open=true;
+  }else{
+    $(".channelRow").css("left", "-100%");
+    $(".slider").css("right","-20px" );
+    $(".slider").css("transform","rotate(0deg)");
+    open= false;
+  }
+
+})
+
+
 function isOnline(streamer){
   var name = streamer.stream.channel.name;
   var div = document.querySelector("#"+name).dataset.status = "online";
@@ -40,6 +56,20 @@ function activate(selected){
   }
 
 }
+////////////////////////////////////////////////////////////
+window.addEventListener("resize",function(){
+  if(window.innerWidth > 780){
+    $(".channelRow").css("left", "0");
+    $(".slider").css("right","20px" );
+    $(".slider").css("transform","rotate(180deg)");
+    open=true;
+  }else{
+    $(".channelRow").css("left", "-100%");
+    $(".slider").css("right","-20px" );
+    $(".slider").css("transform","rotate(0deg)");
+    open= false;
+  }
+})
 ////////////////////////////////////////////////////////////
 function showThisStatus(a){
 var profiles = document.querySelectorAll(".profile");
@@ -74,27 +104,16 @@ var profiles = document.querySelectorAll(".profile");
 function buildElements(){
   channelsGotten.forEach(function(e){ makeDivs(e.name , e.logo, e.message);});
 
-
-
 var profiles = document.querySelectorAll(".profile");
 for(var i = 0 ; i < profiles.length; i++){
   profiles[i].addEventListener('click', function(){
-
         $("#info"+this.id).slideToggle();
-
-
   })
 }
-
+/////////// put info in the online channels
 for(var i = 0 ; i < channelsOnline.length ; i++){
-
   isOnline(channelsOnline[i]);
 };
-
-
-
-
-
 };
 
 ////////////////////////////////////////////////////////////
@@ -126,7 +145,7 @@ function makeDivs(name, logo){
 
 if(logo === undefined){
 
-  logo = logoReplace;
+  logo = 'fi-torso.svg';
 }
 if(name == undefined){
   name = arguments[2];

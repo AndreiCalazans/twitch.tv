@@ -18,13 +18,15 @@
 }
 .videoRow {
   height: 100%;
+  position: relative;
   flex-grow:2;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.videoRow > *{
-  padding:50px;
+.section p {
+  position:absolute;
+  bottom:0;
 }
 .channelRow .options  {
   display: flex;
@@ -145,12 +147,43 @@ h1{
   bottom:28px;
   box-shadow: 0 3px 0px 0px rgba(0,0,0,0.5);
 }
+.section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height:97vh;
+}
+.options i{
+  display:none;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+.channelRowSlide {
+  left:0;
+}
+.slider {
+  transition:all 0.4s;
+}
 @media (max-width:780px) {
   .content{
-    display:block;
     height:auto;
   }
+  .options i {
+    display:block;
+    position: absolute;
+    right: -20px;
+    cursor: pointer;
+  }
+
   .channelRow{
+    position:absolute;
+    z-index:2;
+    left:-100%;
     width:100%;
+  }
+
+  .section iframe{
+    max-width:320px;
   }
 }
