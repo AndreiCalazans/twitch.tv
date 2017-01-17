@@ -13,18 +13,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
   </head>
-  <body>
+  <body onload="buildElements()">
 
 <div class="content">
   <div class="channelRow">
       <div class="options">
-        <p>All</p>
-        <p>Online</p>
-        <p>Offline</p>
+        <p id="all" onClick="showThisStatus()">All</p>
+        <p id="online" onClick="showThisStatus('online')">Online</p>
+        <p id="offline" onClick="showThisStatus('offline')">Offline</p>
       </div>
       <div class="channels">
         <div class="channel">
-          <div class="profile">
+          <!-- <div class="profile" id="name">
             <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg" alt="logo">
             <p class="nameOfChannel">My channel</p>
             <i class="toggle fa fa-plus" aria-hidden="true"></i>
@@ -38,15 +38,26 @@
             </div>
 
           </div>
-        </div>
+        </div> -->
 
       </div>
-      <div id="addBtn">Add</div>
-  </div>
-  <div class="videoRow">
-    <video src="#"></video>
+      <!-- <div id="addBtn">Add</div> -->
   </div>
 </div>
+
+  <div class="videoRow">
+    <div class="section">
+      <h1 class="text-center">Select an Online stream to watch</h1>
+      <iframe
+        src="http://player.twitch.tv/?channel={ESL_SC2}"
+        height="320"
+        width="420"
+        frameborder="0"
+        scrolling="no"
+        allowfullscreen="true">
+    </iframe>
+    </div>
+  </div>
 
 
 
